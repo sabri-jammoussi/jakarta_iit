@@ -1,0 +1,899 @@
+30-Nov-2025 18:39:34.099 SEVERE [http-nio-8091-exec-1] org.apache.catalina.core.ApplicationDispatcher.invoke "Servlet.service()" pour la servlet [jsp] a lancé une exception
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:553)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:34.100 SEVERE [http-nio-8091-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [CategoryController] dans le contexte au chemin [/servlet-jsp-gr3] a retourné une exception [Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:] avec la cause
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:553)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:35.388 SEVERE [http-nio-8091-exec-2] org.apache.catalina.core.ApplicationDispatcher.invoke "Servlet.service()" pour la servlet [jsp] a lancé une exception
+	java.lang.ClassNotFoundException: org.apache.jsp.categories_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:116)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:53)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:151)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:163)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:382)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:35.389 SEVERE [http-nio-8091-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [CategoryController] dans le contexte au chemin [/servlet-jsp-gr3] a retourné une exception [org.apache.jasper.JasperException: java.lang.ClassNotFoundException: org.apache.jsp.categories_jsp] avec la cause
+	java.lang.ClassNotFoundException: org.apache.jsp.categories_jsp
+		at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:116)
+		at org.apache.jasper.servlet.JasperLoader.loadClass(JasperLoader.java:53)
+		at org.apache.catalina.core.DefaultInstanceManager.newInstance(DefaultInstanceManager.java:151)
+		at org.apache.jasper.servlet.JspServletWrapper.getServlet(JspServletWrapper.java:163)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:382)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:42.010 SEVERE [http-nio-8091-exec-3] org.apache.catalina.core.ApplicationDispatcher.invoke "Servlet.service()" pour la servlet [jsp] a lancé une exception
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:553)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:42.010 SEVERE [http-nio-8091-exec-3] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [CategoryController] dans le contexte au chemin [/servlet-jsp-gr3] a retourné une exception [Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:] avec la cause
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:553)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:53.063 SEVERE [http-nio-8091-exec-9] org.apache.catalina.core.ApplicationDispatcher.invoke "Servlet.service()" pour la servlet [jsp] a lancé une exception
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:553)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:39:53.063 SEVERE [http-nio-8091-exec-9] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [CategoryController] dans le contexte au chemin [/servlet-jsp-gr3] a retourné une exception [Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:] avec la cause
+	org.apache.jasper.JasperException: Impossible de compiler la classe pour la JSP: 
+
+Une erreur s'est produite à la ligne : [4] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+1: <nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Une erreur s'est produite à la ligne : [5] dans le fichier jsp : [/navbar.jsp]
+fullname cannot be resolved to a variable
+2:   <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
+3:   <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
+4:   <% if (fullname != null) { %>
+5:     <span class="navbar-text"><b><%= fullname %></b></span>
+6:   <% } %>
+7: </nav>
+
+
+Stacktrace:
+		at org.apache.jasper.compiler.DefaultErrorHandler.javacError(DefaultErrorHandler.java:70)
+		at org.apache.jasper.compiler.ErrorDispatcher.javacError(ErrorDispatcher.java:189)
+		at org.apache.jasper.compiler.JDTCompiler.generateClass(JDTCompiler.java:553)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:367)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:49:36.705 SEVERE [http-nio-8091-exec-1] org.apache.catalina.core.ApplicationDispatcher.invoke "Servlet.service()" pour la servlet [jsp] a lancé une exception
+	org.apache.jasper.JasperException: /categories.jsp (ligne : [41], colonne : [55]) Le préfixe d'attribut [fn] ne correspond à aucune librairie de tags importée
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:29)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:265)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:102)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor$1FVVisitor.visit(Validator.java:1407)
+		at org.apache.jasper.compiler.ELNode$Function.accept(ELNode.java:126)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.ELNode$Visitor.visit(ELNode.java:242)
+		at org.apache.jasper.compiler.ELNode$Root.accept(ELNode.java:51)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.validateFunctions(Validator.java:1425)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1429)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:672)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:881)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2299)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:432)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1642)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:205)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:361)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:49:36.705 SEVERE [http-nio-8091-exec-1] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [CategoryController] dans le contexte au chemin [/servlet-jsp-gr3] a retourné une exception [/categories.jsp (ligne : [41], colonne : [55]) Le préfixe d'attribut [fn] ne correspond à aucune librairie de tags importée] avec la cause
+	org.apache.jasper.JasperException: /categories.jsp (ligne : [41], colonne : [55]) Le préfixe d'attribut [fn] ne correspond à aucune librairie de tags importée
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:29)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:265)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:102)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor$1FVVisitor.visit(Validator.java:1407)
+		at org.apache.jasper.compiler.ELNode$Function.accept(ELNode.java:126)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.ELNode$Visitor.visit(ELNode.java:242)
+		at org.apache.jasper.compiler.ELNode$Root.accept(ELNode.java:51)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.validateFunctions(Validator.java:1425)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1429)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:672)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:881)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2299)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:432)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1642)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:205)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:361)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:49:41.049 SEVERE [http-nio-8091-exec-2] org.apache.catalina.core.ApplicationDispatcher.invoke "Servlet.service()" pour la servlet [jsp] a lancé une exception
+	org.apache.jasper.JasperException: /categories.jsp (ligne : [41], colonne : [55]) Le préfixe d'attribut [fn] ne correspond à aucune librairie de tags importée
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:29)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:265)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:102)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor$1FVVisitor.visit(Validator.java:1407)
+		at org.apache.jasper.compiler.ELNode$Function.accept(ELNode.java:126)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.ELNode$Visitor.visit(ELNode.java:242)
+		at org.apache.jasper.compiler.ELNode$Root.accept(ELNode.java:51)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.validateFunctions(Validator.java:1425)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1429)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:672)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:881)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2299)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:432)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1642)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:205)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:361)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)
+30-Nov-2025 18:49:41.049 SEVERE [http-nio-8091-exec-2] org.apache.catalina.core.StandardWrapperValve.invoke Servlet.service() du Servlet [CategoryController] dans le contexte au chemin [/servlet-jsp-gr3] a retourné une exception [/categories.jsp (ligne : [41], colonne : [55]) Le préfixe d'attribut [fn] ne correspond à aucune librairie de tags importée] avec la cause
+	org.apache.jasper.JasperException: /categories.jsp (ligne : [41], colonne : [55]) Le préfixe d'attribut [fn] ne correspond à aucune librairie de tags importée
+		at org.apache.jasper.compiler.DefaultErrorHandler.jspError(DefaultErrorHandler.java:29)
+		at org.apache.jasper.compiler.ErrorDispatcher.dispatch(ErrorDispatcher.java:265)
+		at org.apache.jasper.compiler.ErrorDispatcher.jspError(ErrorDispatcher.java:102)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor$1FVVisitor.visit(Validator.java:1407)
+		at org.apache.jasper.compiler.ELNode$Function.accept(ELNode.java:126)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.ELNode$Visitor.visit(ELNode.java:242)
+		at org.apache.jasper.compiler.ELNode$Root.accept(ELNode.java:51)
+		at org.apache.jasper.compiler.ELNode$Nodes.visit(ELNode.java:202)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.validateFunctions(Validator.java:1425)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.prepareExpression(Validator.java:1429)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:672)
+		at org.apache.jasper.compiler.Node$ELExpression.accept(Node.java:881)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Validator$ValidateVisitor.visit(Validator.java:804)
+		at org.apache.jasper.compiler.Node$CustomTag.accept(Node.java:1440)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Node$Visitor.visitBody(Node.java:2293)
+		at org.apache.jasper.compiler.Node$Visitor.visit(Node.java:2299)
+		at org.apache.jasper.compiler.Node$Root.accept(Node.java:432)
+		at org.apache.jasper.compiler.Node$Nodes.visit(Node.java:2237)
+		at org.apache.jasper.compiler.Validator.validateExDirectives(Validator.java:1642)
+		at org.apache.jasper.compiler.Compiler.generateJava(Compiler.java:205)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:361)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:339)
+		at org.apache.jasper.compiler.Compiler.compile(Compiler.java:325)
+		at org.apache.jasper.JspCompilationContext.compile(JspCompilationContext.java:586)
+		at org.apache.jasper.servlet.JspServletWrapper.service(JspServletWrapper.java:368)
+		at org.apache.jasper.servlet.JspServlet.serviceJspFile(JspServlet.java:350)
+		at org.apache.jasper.servlet.JspServlet.service(JspServlet.java:301)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.ApplicationDispatcher.invoke(ApplicationDispatcher.java:610)
+		at org.apache.catalina.core.ApplicationDispatcher.processRequest(ApplicationDispatcher.java:392)
+		at org.apache.catalina.core.ApplicationDispatcher.doForward(ApplicationDispatcher.java:321)
+		at org.apache.catalina.core.ApplicationDispatcher.forward(ApplicationDispatcher.java:266)
+		at org.example.controller.CategoryController.doGet(CategoryController.java:28)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+		at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+		at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162)
+		at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138)
+		at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+		at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88)
+		at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+		at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+		at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+		at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:654)
+		at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+		at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+		at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+		at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+		at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)
+		at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1774)
+		at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973)
+		at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491)
+		at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+		at java.base/java.lang.Thread.run(Thread.java:833)

@@ -1,7 +1,7 @@
-package org.example. repository;
+package org.example.repository;
 
-import org.example. config.DatabaseConfig;
-import org. example.model.Category;
+import org.example.config.DatabaseConfig;
+import org.example.model.Category;
 import org.example.model.Product;
 
 import java.sql.*;
@@ -24,13 +24,13 @@ public class CategoryRepository {
 
             while (rs.next()) {
                 int id = rs.getInt("id");
-                String name = rs. getString("name");
+                    String name = rs.getString("name");
                 String description = rs.getString("description");
 
                 // Get products for this category
                 List<Product> products = getProductsByCategory(id);
 
-                Category category = new Category(name, description, products);
+                    Category category = new Category(id, name, description, products);
                 categories.add(category);
             }
 
@@ -58,7 +58,7 @@ public class CategoryRepository {
                 // Get products for this category
                 List<Product> products = getProductsByCategory(id);
 
-                return new Category(name, description, products);
+             return new Category(id, name, description, products);
             }
 
         } catch (SQLException e) {
@@ -83,8 +83,9 @@ public class CategoryRepository {
                 String name = rs.getString("name");
                 double price = rs.getDouble("price");
                 String description = rs.getString("description");
-
-                Product product = new Product(name, price, description, categoryId);
+                String imageUrl = null;
+                try { imageUrl = rs.getString("image_url"); } catch (SQLException ignore) {}
+                Product product = new Product(name, price, description, categoryId, imageUrl);
                 products.add(product);
             }
 

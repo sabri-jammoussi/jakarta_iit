@@ -1,12 +1,12 @@
-package org.example. controller;
+package org.example.controller;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet. http.HttpServlet;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.model.Promotion;
-import org.example.service. PromotionService;
+import org.example.service.PromotionService;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -97,7 +97,7 @@ public class PromotionController extends HttpServlet {
         try {
             String dateDebutStr = request.getParameter("dateDebut");
             String dateFinStr = request.getParameter("dateFin");
-            String valeurStr = request.getParameter("valeur");
+            String valeurStr = request.getParameter("promotionValeur");
 
             // Validate input
             if (dateDebutStr == null || dateDebutStr.trim().isEmpty() ||
@@ -116,7 +116,7 @@ public class PromotionController extends HttpServlet {
 
             if (success) {
                 request.setAttribute("successMessage", "Promotion added successfully!");
-                response.sendRedirect(request.getContextPath() + "/promotions?action=list");
+                response.sendRedirect("/servlet-jsp-gr3/promotions?action=list");
             } else {
                 request.setAttribute("errorMessage", "Failed to add promotion");
                 showAddForm(request, response);
@@ -142,7 +142,7 @@ public class PromotionController extends HttpServlet {
 
             String dateDebutStr = request.getParameter("dateDebut");
             String dateFinStr = request.getParameter("dateFin");
-            String valeurStr = request.getParameter("valeur");
+            String valeurStr = request.getParameter("promotionValeur");
 
             // Validate input
             if  (   dateDebutStr == null || dateDebutStr.trim().isEmpty() ||
@@ -162,7 +162,7 @@ public class PromotionController extends HttpServlet {
             boolean success = promotionService.updatePromotion(idStr, dateDebut, dateFin, valeur);
 
             if (success) {
-                response.sendRedirect(request.getContextPath() + "/promotions?action=list");
+                response.sendRedirect("/servlet-jsp-gr3/promotions?action=list");
             } else {
                 request.setAttribute("errorMessage", "Failed to update promotion");
                 showEditForm(request, response);
@@ -191,9 +191,9 @@ public class PromotionController extends HttpServlet {
     // Delete promotion
     private void deletePromotion(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        int id = Integer. parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
         promotionService.deletePromotion(id);
-        response.sendRedirect(request. getContextPath() + "/promotions");
+        response.sendRedirect("/servlet-jsp-gr3/promotions?action=list");
     }
     // Show add promotion form
     private void showAddForm(HttpServletRequest request, HttpServletResponse response)
@@ -209,7 +209,7 @@ public class PromotionController extends HttpServlet {
             String idStr = request.getParameter("id");
 
             if (idStr == null || idStr.trim().isEmpty()) {
-                response.sendRedirect(request.getContextPath() + "/promotions?action=list");
+                response.sendRedirect("/servlet-jsp-gr3/promotions?action=list");
                 return;
             }
 
@@ -218,7 +218,7 @@ public class PromotionController extends HttpServlet {
 
             if (promotion == null) {
                 request.setAttribute("errorMessage", "Promotion not found");
-                response.sendRedirect(request.getContextPath() + "/promotions?action=list");
+                response.sendRedirect("/servlet-jsp-gr3/promotions?action=list");
                 return;
             }
 
@@ -226,7 +226,7 @@ public class PromotionController extends HttpServlet {
             request.getRequestDispatcher("edit-promotions.jsp").forward(request, response);
 
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/promotions?action=list");
+            response.sendRedirect("/servlet-jsp-gr3/promotions?action=list");
         }
     }
     // View single promotion

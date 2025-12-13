@@ -21,7 +21,7 @@
                 <h1 class="text-4xl font-bold mb-2">Categories</h1>
                 <p class="text-green-100">Manage your product categories</p>
               </div>
-              <a href="/servlet-jsp-gr3/categories/create"
+              <a href="/servlet-jsp-gr3/categories?action=create"
                 class="bg-white text-green-600 hover:bg-green-50 px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
                 <span class="inline-block mr-2">+</span> Add Category
               </a>
@@ -47,9 +47,9 @@
                     <h3 class="text-xl font-bold text-gray-800 mb-2">${category.name}</h3>
                     <p class="text-gray-600 text-sm mb-6 line-clamp-3">${category.description}</p>
                     <div class="flex gap-3 justify-between pt-4 border-t border-gray-200">
-                      <a href="/servlet-jsp-gr3/categories/edit?name=${category.name}"
+                      <a href="/servlet-jsp-gr3/categories?action=edit&id=${category.id}"
                         class="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Edit</a>
-                      <a href="/servlet-jsp-gr3/categories/delete?name=${category.name}"
+                      <a href="/servlet-jsp-gr3/categories?action=delete&id=${category.id}"
                         onclick="return confirm('Delete category ${category.name}?');"
                         class="flex-1 text-center bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Delete</a>
                     </div>

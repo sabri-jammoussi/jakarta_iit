@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.service.CategoryService;
 import org.example.service.ProductService;
+import org.example.service.PromotionService;
 
 
 import java.io.IOException;
@@ -16,12 +17,14 @@ import java.io.IOException;
 public class ProductController extends HttpServlet {
   private ProductService productService;
   private CategoryService categoryService;
+  private PromotionService promotionService;
 
   @Override
   public void init() throws ServletException {
     super.init();
     productService = new ProductService();
     categoryService = new CategoryService();
+      promotionService = new PromotionService();
   }
 
   @Override
@@ -76,6 +79,25 @@ public class ProductController extends HttpServlet {
 
   private void listProducts(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     var products = productService.getAllProducts();
+
+    // optional category filter from query param
+    String categoryParam = request.getParameter("category");
+    if (categoryParam != null && !categoryParam.isEmpty()) {
+      try {
+        int catId = Integer.parseInt(categoryParam);
+        var filtered = new java.util.ArrayList<>(products.size());
+        for (var p : products) {
+          if (p.getCategoryId() == catId) filtered.add(p);
+        }
+        products = filtered;
+      } catch (NumberFormatException ignored) {
+      }
+    }
+
+    // provide categories for the UI and promotions for client display
+    request.setAttribute("categories", categoryService.getAllCategories());
+    request.setAttribute("promotions", promotionService.getAllPromotions());
+
     request.setAttribute("products", products);
     request.getRequestDispatcher("products.jsp").forward(request, response);
   }
@@ -90,6 +112,7 @@ public class ProductController extends HttpServlet {
       String name = request.getParameter("name");
       String priceStr = request.getParameter("price");
       String description = request.getParameter("description");
+      String imageUrl = request.getParameter("imageUrl");
       String categoryIdStr = request.getParameter("categoryId");
 
       if (name == null || name.trim().isEmpty() || priceStr == null || priceStr.trim().isEmpty()) {
@@ -101,7 +124,7 @@ public class ProductController extends HttpServlet {
       double price = Double.parseDouble(priceStr);
       int categoryId = categoryIdStr == null || categoryIdStr.isEmpty() ? 0 : Integer.parseInt(categoryIdStr);
 
-      boolean success = productService.addProduct(name, price, description, categoryId);
+      boolean success = productService.addProduct(name, price, description, categoryId, imageUrl);
       if (success) {
         response.sendRedirect("/servlet-jsp-gr3/products?action=list");
       } else {
@@ -145,9 +168,10 @@ public class ProductController extends HttpServlet {
       String name = request.getParameter("name");
       double price = Double.parseDouble(request.getParameter("price"));
       String description = request.getParameter("description");
+      String imageUrl = request.getParameter("imageUrl");
       int categoryId = Integer.parseInt(request.getParameter("categoryId"));
 
-      boolean success = productService.updateProduct(id, name, price, description, categoryId);
+      boolean success = productService.updateProduct(id, name, price, description, categoryId, imageUrl);
       if (success) {
         response.sendRedirect("/servlet-jsp-gr3/products?action=list");
       } else {

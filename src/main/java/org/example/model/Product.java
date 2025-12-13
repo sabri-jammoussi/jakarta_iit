@@ -6,6 +6,7 @@ public class Product {
     private double price;
     private String description;
     private int categoryId;
+    private String imageUrl;
 
     public Product(String name, double price, String description, int categoryId) {
         this.name = name;
@@ -20,6 +21,23 @@ public class Product {
         this.price = price;
         this.description = description;
         this.categoryId = categoryId;
+    }
+
+    public Product(int id, String name, double price, String description, int categoryId, String imageUrl) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.categoryId = categoryId;
+        this.imageUrl = imageUrl;
+    }
+
+    public Product(String name, double price, String description, int categoryId, String imageUrl) {
+        this.name = name;
+        this.price = price;
+        this.description = description;
+        this.categoryId = categoryId;
+        this.imageUrl = imageUrl;
     }
 
     public String getName() {
@@ -60,5 +78,13 @@ public class Product {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

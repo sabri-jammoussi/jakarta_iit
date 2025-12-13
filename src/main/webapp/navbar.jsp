@@ -1,5 +1,5 @@
 <script src="https://cdn.tailwindcss.com"></script>
-<% String fullname=(String) session.getAttribute("fullname"); %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
   <nav class="bg-white shadow-lg border-b border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -24,18 +24,19 @@
         </div>
 
         <!-- User Info -->
-        <% if (fullname !=null) { %>
-          <div class="flex items-center space-x-4">
-            <span class="text-gray-700 font-semibold">
-              <%= fullname %>
-            </span>
-            <a href="/servlet-jsp-gr3/logout"
-              class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Logout</a>
-          </div>
-          <% } else { %>
+        <c:choose>
+          <c:when test="${not empty sessionScope.fullname}">
+            <div class="flex items-center space-x-4">
+              <span class="text-gray-700 font-semibold">${sessionScope.fullname}</span>
+              <a href="/servlet-jsp-gr3/logout"
+                class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Logout</a>
+            </div>
+          </c:when>
+          <c:otherwise>
             <a href="/servlet-jsp-gr3/login"
               class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Login</a>
-            <% } %>
+          </c:otherwise>
+        </c:choose>
       </div>
     </div>
   </nav>

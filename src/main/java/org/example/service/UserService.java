@@ -16,4 +16,13 @@ public class UserService {
     public Optional<User> findUserByEmailAndPwd(String email, String pwd) {
         return userRepository.findUserByEmailAndPwd(email,pwd);
     }
+
+    public boolean registerUser(String email, String password, String fullname) {
+        User u = new User();
+        u.setEmail(email);
+        u.setPassword(password);
+        u.setFullname(fullname);
+        u.setRole("USER");
+        return userRepository.addUser(u);
+    }
 }

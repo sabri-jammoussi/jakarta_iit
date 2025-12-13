@@ -3,19 +3,28 @@ package org.example.model;
 import java.util.List;
 
 public class Category {
-
+    private int id;
     private String name;
     private String description;
     private List<Product> products;
 
-    public Category(String name, String description, List<Product> products) {
+    public Category(int id, String name, String description, List<Product> products) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.products = products;
     }
 
+    public Category(String name, String description, List<Product> products) {
+        this(0, name, description, products);
+    }
+
     public String getName() {
         return name;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void setName(String name) {

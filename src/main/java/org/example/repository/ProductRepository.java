@@ -24,10 +24,12 @@ public class ProductRepository {
 				int id = rs.getInt("id");
 				String name = rs.getString("name");
 				double price = rs.getDouble("price");
-				String description = rs.getString("description");
-				int categoryId = rs.getInt("category_id");
+								String description = rs.getString("description");
+								int categoryId = rs.getInt("category_id");
+								String imageUrl = null;
+								try { imageUrl = rs.getString("image_url"); } catch (SQLException ignore) {}
 
-				Product p = new Product(id, name, price, description, categoryId);
+								Product p = new Product(id, name, price, description, categoryId, imageUrl);
 				products.add(p);
 			}
 
@@ -52,8 +54,10 @@ public class ProductRepository {
 				double price = rs.getDouble("price");
 				String description = rs.getString("description");
 				int categoryId = rs.getInt("category_id");
+				String imageUrl = null;
+				try { imageUrl = rs.getString("image_url"); } catch (SQLException ignore) {}
 
-				return new Product(id, name, price, description, categoryId);
+				return new Product(id, name, price, description, categoryId, imageUrl);
 			}
 
 		} catch (SQLException e) {
@@ -64,7 +68,7 @@ public class ProductRepository {
 	}
 
 	public boolean addProduct(Product product) {
-		String sql = "INSERT INTO Product (name, price, description, category_id) VALUES (?, ?, ?, ?)";
+		String sql = "INSERT INTO Product (name, price, description, category_id, image_url) VALUES (?, ?, ?, ?, ?)";
 
 		try (Connection conn = DatabaseConfig.getConnection();
 			 PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -73,6 +77,7 @@ public class ProductRepository {
 			pstmt.setDouble(2, product.getPrice());
 			pstmt.setString(3, product.getDescription());
 			pstmt.setInt(4, product.getCategoryId());
+			pstmt.setString(5, product.getImageUrl());
 
 			int rows = pstmt.executeUpdate();
 			return rows > 0;
@@ -84,7 +89,7 @@ public class ProductRepository {
 	}
 
 	public boolean updateProduct(int id, Product product) {
-		String sql = "UPDATE Product SET name = ?, price = ?, description = ?, category_id = ? WHERE id = ?";
+		String sql = "UPDATE Product SET name = ?, price = ?, description = ?, category_id = ?, image_url = ? WHERE id = ?";
 
 		try (Connection conn = DatabaseConfig.getConnection();
 			 PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -93,7 +98,8 @@ public class ProductRepository {
 			pstmt.setDouble(2, product.getPrice());
 			pstmt.setString(3, product.getDescription());
 			pstmt.setInt(4, product.getCategoryId());
-			pstmt.setInt(5, id);
+			pstmt.setString(5, product.getImageUrl());
+			pstmt.setInt(6, id);
 
 			int rows = pstmt.executeUpdate();
 			return rows > 0;

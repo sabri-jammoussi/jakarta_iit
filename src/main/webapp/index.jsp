@@ -1,34 +1,5 @@
-<!DOCTYPE html>
-<html>
-<title>IIT/GR3</title>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
-<form action="/servlet-jsp-gr3/login" method="post" style="max-width: 400px; margin: 0 auto; margin-top: 100px; padding: 16px;">
-  <div class="imgcontainer">
-    <img src="assets/img/avatar.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
-
-    <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
-  </div>
-</form>
-
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" isELIgnored="false" %>
+  <% String context=request.getContextPath(); jakarta.servlet.http.HttpSession s=request.getSession(false); String
+    role=null; if (s !=null) { Object r=s.getAttribute("role"); if (r !=null) role=r.toString(); } if (role !=null &&
+    ("ADMIN".equalsIgnoreCase(role) || "ROLE_ADMIN" .equalsIgnoreCase(role))) { response.sendRedirect(context
+    + "/promotions?action=list" ); } else { response.sendRedirect(context + "/home.jsp" ); } %>

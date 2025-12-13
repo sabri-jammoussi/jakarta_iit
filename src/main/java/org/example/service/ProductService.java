@@ -22,14 +22,14 @@ public class ProductService {
         return productRepository.getProductById(id);
     }
 
-    public boolean addProduct(String name, double price, String description, int categoryId) {
-        Product p = new Product(name, price, description, categoryId);
+    public boolean addProduct(String name, double price, String description, int categoryId, String imageUrl) {
+        Product p = new Product(name, price, description, categoryId, imageUrl);
         return productRepository.addProduct(p);
     }
 
-    public boolean updateProduct(int id, String name, double price, String description, int categoryId) {
+    public boolean updateProduct(int id, String name, double price, String description, int categoryId, String imageUrl) {
         if (id <= 0) throw new IllegalArgumentException("Product id must be positive");
-        Product p = new Product(id, name, price, description, categoryId);
+        Product p = new Product(id, name, price, description, categoryId, imageUrl);
         return productRepository.updateProduct(id, p);
     }
 

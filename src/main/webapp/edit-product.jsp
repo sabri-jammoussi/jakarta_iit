@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
         <!DOCTYPE html>
         <html lang="fr">
@@ -84,6 +84,14 @@
                                     <label class="block text-sm font-semibold text-gray-700 mb-2">Description</label>
                                     <textarea name="description" rows="5"
                                         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none">${product.description}</textarea>
+                                </div>
+
+                                <!-- Image URL -->
+                                <div class="mb-6">
+                                    <label class="block text-sm font-semibold text-gray-700 mb-2">Image URL</label>
+                                    <input name="imageUrl" type="url"
+                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                        value="${product.imageUrl}" placeholder="https://example.com/image.jpg">
                                 </div>
                             </div>
 

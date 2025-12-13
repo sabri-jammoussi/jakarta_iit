@@ -80,12 +80,12 @@ public class AuthController extends HttpServlet {
             request.getSession().setAttribute("fullname", u.getFullname() == null ? u.getEmail() : u.getFullname());
             request.getSession().setAttribute("role", u.getRole() == null ? "USER" : u.getRole());
 
-            // Redirect based on role
+            // Redirect based on role - Admin goes to admin dashboard, users to client home
             String role = (String) request.getSession().getAttribute("role");
             if ("ADMIN".equalsIgnoreCase(role) || "ROLE_ADMIN".equalsIgnoreCase(role)) {
-                response.sendRedirect(request.getContextPath() + "/promotions?action=list");
+                response.sendRedirect(request.getContextPath() + "/admin/dashboard");
             } else {
-                response.sendRedirect(request.getContextPath() + "/products?action=list");
+                response.sendRedirect(request.getContextPath() + "/client/home");
             }
         } else {
             request.setAttribute("error", "Invalid credentials");

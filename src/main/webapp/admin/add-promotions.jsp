@@ -1,0 +1,77 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Add Promotion - Admin</title>
+            <script src="https://cdn.tailwindcss.com"></script>
+        </head>
+
+        <body class="bg-gray-100 min-h-screen">
+            <%@ include file="/includes/admin-navbar.jsp" %>
+
+                <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                    <div class="mb-6">
+                        <a href="${pageContext.request.contextPath}/admin/promotions"
+                            class="text-orange-600 hover:text-orange-700 flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                            </svg>
+                            Back to Promotions
+                        </a>
+                    </div>
+
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h1 class="text-2xl font-bold text-gray-800 mb-6">Add New Promotion</h1>
+
+                        <c:if test="${not empty errorMessage}">
+                            <div class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-6">
+                                ${errorMessage}
+                            </div>
+                        </c:if>
+
+                        <form action="${pageContext.request.contextPath}/admin/promotions" method="post"
+                            class="space-y-6">
+                            <input type="hidden" name="action" value="add" />
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Start Date *</label>
+                                <input type="date" name="dateDebut" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">End Date *</label>
+                                <input type="date" name="dateFin" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500" />
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Discount Percentage (0-100)
+                                    *</label>
+                                <input type="number" name="promotionValeur" min="0" max="100" step="0.1" required
+                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500"
+                                    placeholder="e.g., 20" />
+                                <p class="text-sm text-gray-500 mt-1">Enter a value between 0 and 100</p>
+                            </div>
+
+                            <div class="flex gap-4 pt-4">
+                                <button type="submit"
+                                    class="flex-1 bg-orange-600 hover:bg-orange-700 text-white py-3 rounded-lg font-semibold transition-colors duration-200">
+                                    Add Promotion
+                                </button>
+                                <a href="${pageContext.request.contextPath}/admin/promotions"
+                                    class="flex-1 text-center bg-gray-200 hover:bg-gray-300 text-gray-700 py-3 rounded-lg font-semibold transition-colors duration-200">
+                                    Cancel
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </body>
+
+        </html>

@@ -1,67 +1,78 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<html>
-<head>
-  <title>Produits</title>
-  <link rel="stylesheet" href="./libraries/bootstrap/bootstrap.min.css">
-</head>
-<body>
+  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+      <!DOCTYPE html>
+      <html lang="fr">
 
-<%@include file="navbar.jsp" %>
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Products</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+      </head>
 
-<div class="container py-4">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 class="h4 mb-0">
-      <c:choose>
-        <c:when test="${not empty requestScope.products}">
-          Produits
-        </c:when>
-        <c:otherwise>
-          Liste des produits
-        </c:otherwise>
-      </c:choose>
-    </h1>
-    <a href="/servlet-jsp-gr3/products/create" class="btn btn-primary">Ajouter</a>
-  </div>
+      <body class="bg-gray-50">
+        <%@include file="navbar.jsp" %>
 
-  <c:if test="${empty requestScope.products}">
-    <div class="alert alert-info">Aucun produit disponible.</div>
-  </c:if>
-
-  <c:if test="${not empty requestScope.products}">
-    <div class="table-responsive">
-      <table class="table table-striped table-bordered align-middle">
-        <thead class="table-light">
-          <tr>
-            <th style="width: 25%;">Nom</th>
-            <th style="width: 15%;">Prix</th>
-            <th style="width: 40%;">Description</th>
-            <th style="width: 20%;">Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="p" items="${requestScope.products}">
-          <tr>
-            <td><strong>${p.name}</strong></td>
-            <td>
-              <fmt:formatNumber value="${p.price}" type="currency" currencySymbol="$"/>
-            </td>
-            <td>${p.description}</td>
-            <td>
-              <div class="btn-group" role="group">
-                <!-- Remplacez 'name' par un identifiant unique si disponible -->
-                <a href="/servlet-jsp-gr3/products/edit?name=${p.name}" class="btn btn-sm btn-outline-secondary">Modifier</a>
-                <a href="/servlet-jsp-gr3/products/delete?name=${p.name}" class="btn btn-sm btn-outline-danger"
-                   onclick="return confirm('Supprimer le produit ${p.name} ?');">Supprimer</a>
+          <!-- Header Section -->
+          <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="flex justify-between items-center">
+                <div>
+                  <h1 class="text-4xl font-bold mb-2">Products</h1>
+                  <p class="text-purple-100">Manage your product catalog</p>
+                </div>
+                <a href="/servlet-jsp-gr3/products?action=add"
+                  class="bg-white text-purple-600 hover:bg-purple-50 px-6 py-3 rounded-lg font-semibold transition-colors duration-200">
+                  <span class="inline-block mr-2">+</span> Add Product
+                </a>
               </div>
-            </td>
-          </tr>
-        </c:forEach>
-        </tbody>
-      </table>
-    </div>
-  </c:if>
-</div>
-</body>
-</html>
+            </div>
+          </div>
+
+          <!-- Main Content -->
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <c:if test="${empty requestScope.products}">
+              <div class="bg-blue-50 border border-blue-200 rounded-lg p-8 text-center">
+                <p class="text-blue-800 text-lg">No products available. Create one to get started!</p>
+              </div>
+            </c:if>
+
+            <c:if test="${not empty requestScope.products}">
+              <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div class="overflow-x-auto">
+                  <table class="w-full">
+                    <thead class="bg-gray-100 border-b border-gray-200">
+                      <tr>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Name</th>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Price</th>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Description</th>
+                        <th class="px-6 py-4 text-left text-sm font-semibold text-gray-700">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                      <c:forEach var="p" items="${requestScope.products}">
+                        <tr class="hover:bg-gray-50 transition-colors duration-150">
+                          <td class="px-6 py-4 text-sm font-medium text-gray-900">${p.name}</td>
+                          <td class="px-6 py-4 text-sm font-semibold text-green-600">
+                            <fmt:formatNumber value="${p.price}" type="currency" currencySymbol="$" />
+                          </td>
+                          <td class="px-6 py-4 text-sm text-gray-600 max-w-md truncate">${p.description}</td>
+                          <td class="px-6 py-4 text-sm space-x-2">
+                            <a href="/servlet-jsp-gr3/products?action=edit&id=${p.id}"
+                              class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-xs font-medium transition-colors duration-200">Edit</a>
+                            <a href="/servlet-jsp-gr3/products?action=delete&id=${p.id}"
+                              onclick="return confirm('Delete product ${p.name}?');"
+                              class="inline-block bg-red-600 hover:bg-red-700 text-white px-3 py-2 rounded text-xs font-medium transition-colors duration-200">Delete</a>
+                          </td>
+                        </tr>
+                      </c:forEach>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </c:if>
+          </div>
+      </body>
+
+      </html>

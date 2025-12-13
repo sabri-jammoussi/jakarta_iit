@@ -1,0 +1,10 @@
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:20 +0100] "GET /servlet-jsp-gr3 HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:20 +0100] "GET /servlet-jsp-gr3/ HTTP/1.1" 200 1091
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:22 +0100] "GET /favicon.ico HTTP/1.1" 404 683
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:28 +0100] "POST /servlet-jsp-gr3/login HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:28 +0100] "GET /servlet-jsp-gr3/home HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:28 +0100] "GET /servlet-jsp-gr3/home.jsp HTTP/1.1" 200 649
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:32 +0100] "GET /servlet-jsp-gr3/categories HTTP/1.1" 200 2811
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:34 +0100] "GET /servlet-jsp-gr3/produits HTTP/1.1" 200 5828
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:42 +0100] "GET /servlet-jsp-gr3/products/edit?name=Laptop HTTP/1.1" 404 797
+0:0:0:0:0:0:0:1 - - [06/Dec/2025:23:09:44 +0100] "GET /servlet-jsp-gr3/products/create HTTP/1.1" 404 799

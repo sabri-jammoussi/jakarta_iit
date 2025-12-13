@@ -1,31 +1,40 @@
 package org.example.service;
 
 import org.example.model.Product;
+import org.example.repository.ProductRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ProductService {
 
-    private final CategoryService categoryService;
+    private final ProductRepository productRepository;
 
     public ProductService() {
-        this.categoryService = new CategoryService();
+        this.productRepository = new ProductRepository();
     }
 
     public List<Product> getAllProducts() {
-        return categoryService.getAllCategories()
-                .stream()
-                .flatMap(category -> category.getProducts().stream())
-                .collect(Collectors.toList());
+        return productRepository.getAllProducts();
     }
 
-    public List<Product> getProductsByCategoryName(String categoryName) {
-        return categoryService.getAllCategories()
-                .stream()
-                .filter(c -> c.getName().equalsIgnoreCase(categoryName))
-                .findFirst()
-                .map(c -> c.getProducts())
-                .orElse(List.of());
+    public Product getProductById(int id) {
+        if (id <= 0) throw new IllegalArgumentException("Product id must be positive");
+        return productRepository.getProductById(id);
+    }
+
+    public boolean addProduct(String name, double price, String description, int categoryId) {
+        Product p = new Product(name, price, description, categoryId);
+        return productRepository.addProduct(p);
+    }
+
+    public boolean updateProduct(int id, String name, double price, String description, int categoryId) {
+        if (id <= 0) throw new IllegalArgumentException("Product id must be positive");
+        Product p = new Product(id, name, price, description, categoryId);
+        return productRepository.updateProduct(id, p);
+    }
+
+    public boolean deleteProduct(int id) {
+        if (id <= 0) throw new IllegalArgumentException("Product id must be positive");
+        return productRepository.deleteProduct(id);
     }
 }

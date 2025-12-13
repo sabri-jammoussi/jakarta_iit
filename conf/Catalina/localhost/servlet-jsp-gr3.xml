@@ -5,5 +5,7 @@
     <PostResources base="D:/dev/soa/outils/Maven/Depot_local/jakarta/servlet/jsp/jstl/jakarta.servlet.jsp.jstl-api/3.0.2/jakarta.servlet.jsp.jstl-api-3.0.2.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.2.jar"/>
     <PostResources base="D:/dev/soa/outils/Maven/Depot_local/jakarta/el/jakarta.el-api/5.0.0/jakarta.el-api-5.0.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.el-api-5.0.0.jar"/>
     <PostResources base="D:/dev/soa/outils/Maven/Depot_local/org/glassfish/web/jakarta.servlet.jsp.jstl/2.0.0/jakarta.servlet.jsp.jstl-2.0.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/jakarta.servlet.jsp.jstl-2.0.0.jar"/>
+    <PostResources base="D:/dev/soa/outils/Maven/Depot_local/com/mysql/mysql-connector-j/8.3.0/mysql-connector-j-8.3.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/mysql-connector-j-8.3.0.jar"/>
+    <PostResources base="D:/dev/soa/outils/Maven/Depot_local/com/google/protobuf/protobuf-java/3.25.1/protobuf-java-3.25.1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/protobuf-java-3.25.1.jar"/>
   </Resources>
 </Context>

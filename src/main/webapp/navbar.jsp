@@ -1,13 +1,41 @@
-<link rel="stylesheet" href="./libraries/bootstrap/bootstrap.min.css">
-<% String fullname = (String) session.getAttribute("fullname"); %>
+<script src="https://cdn.tailwindcss.com"></script>
+<% String fullname=(String) session.getAttribute("fullname"); %>
 
+  <nav class="bg-white shadow-lg border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <a href="/servlet-jsp-gr3/home" class="flex-shrink-0 flex items-center">
+          <span
+            class="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">IIT
+            Store</span>
+        </a>
 
-<nav class="navbar navbar-light bg-light d-flex justify-content-between p-3">
-  <a class="navbar-brand" href="/servlet-jsp-gr3/home"><b>IIT Store</b></a>
-  <a class="navbar-brand" href="/servlet-jsp-gr3/categories"><b>Category</b></a>
-  <a class="navbar-brand" href="/servlet-jsp-gr3/produits"><b>Products</b></a>
-  <a class="navbar-brand" href="/servlet-jsp-gr3/promotions"><b>Promotions</b></a>
-  <% if (fullname != null) { %>
-    <span class="navbar-text"><b><%= fullname %></b></span>
-  <% } %>
-</nav>
+        <!-- Navigation Links -->
+        <div class="hidden md:flex space-x-8">
+          <a href="/servlet-jsp-gr3/home"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Home</a>
+          <a href="/servlet-jsp-gr3/categories"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Categories</a>
+          <a href="/servlet-jsp-gr3/products"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Products</a>
+          <a href="/servlet-jsp-gr3/promotions"
+            class="text-gray-700 hover:text-purple-600 px-3 py-2 text-sm font-medium transition-colors duration-200">Promotions</a>
+        </div>
+
+        <!-- User Info -->
+        <% if (fullname !=null) { %>
+          <div class="flex items-center space-x-4">
+            <span class="text-gray-700 font-semibold">
+              <%= fullname %>
+            </span>
+            <a href="/servlet-jsp-gr3/logout"
+              class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Logout</a>
+          </div>
+          <% } else { %>
+            <a href="/servlet-jsp-gr3/login"
+              class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">Login</a>
+            <% } %>
+      </div>
+    </div>
+  </nav>

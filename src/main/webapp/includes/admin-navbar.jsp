@@ -50,6 +50,15 @@
                         </svg>
                         Promotions
                     </a>
+                    <a href="${pageContext.request.contextPath}/admin/orders"
+                        class="text-gray-300 hover:text-white px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 3h18v4H3zM3 7v11a2 2 0 002 2h14a2 2 0 002-2V7M7 10h10" />
+                        </svg>
+                        Orders
+                    </a>
                 </div>
 
                 <!-- Right Side: User & Client Link -->
